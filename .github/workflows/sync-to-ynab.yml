@@ -31,15 +31,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Install the latest version of uv
         uses: astral-sh/setup-uv@v3
-        with:
-          version: "latest"
-          enable-cache: true
       - run: uv --version
       - name: Install Python
         run: uv python install  # Installs the version in the .python-version file in the root of the repo
       - run: uv run python --version
-      - name: Verify cache
-        if: steps.setup-uv.outputs.cache-hit == 'true'
-        run: echo "Cache was restored"
       - name: Run sync to YNAB
         run: make run
