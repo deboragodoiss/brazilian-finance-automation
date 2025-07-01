@@ -74,7 +74,7 @@ def main() -> [dict]:
     # Mapping envvar suffix -> value
     bank_accounts = get_bank_accounts_from_env()
 
-    transactions = {}
+    created_transactions = []
     for account in bank_accounts:
         name = account[NAME_ENVVAR_SUFFIX]
         pluggy_id = account[PLUGGY_ID_ENVVAR_SUFFIX]
@@ -88,16 +88,16 @@ def main() -> [dict]:
             api_key=pluggy_api_key,
         )
 
-        transactions.append(
-            ynab.send_transactions_to_ynab(
-                transactions=transactions,
-                budget_id=ynab_budget_id,
-                account_id=ynab_id,
-            )
+        transactions_to_ynab = ynab.send_transactions_to_ynab(
+            transactions=transactions,
+            budget_id=ynab_budget_id,
+            account_id=ynab_id,
         )
 
-    print(f"✅ {len(transactions)} transactions synced")
-    return transactions
+        created_transactions += transactions_to_ynab
+
+    print(f"✅ {len(created_transactions)} transactions synced")
+    return created_transactions
 
 if __name__ == "__main__":
     main()
