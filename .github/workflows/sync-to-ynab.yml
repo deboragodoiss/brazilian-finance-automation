@@ -1,5 +1,6 @@
 name: Sync accounts to YNAB(You Need A Budget) every day at 6AM
 on:
+  workflow_dispatch: {}
   schedule:
     - cron: 0 6 * * *  # Every day at 6AM
   push:
@@ -12,12 +13,12 @@ jobs:
       PLUGGY_CLIENT_ID: ${{ secrets.PLUGGY_CLIENT_ID }}
       PLUGGY_CLIENT_SECRET: ${{ secrets.PLUGGY_CLIENT_SECRET }}
 
-      ACCOUNT_0_NAME: ${{ secrets.ACCOUNT_0_NAME }}
+      ACCOUNT_0_NAME: "Nubank Checking"
       ACCOUNT_0_PLUGGY_ID: ${{ secrets.ACCOUNT_0_PLUGGY_ID }}
       ACCOUNT_0_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_0_YNAB_BUDGET_ID }}
       ACCOUNT_0_YNAB_ID: ${{ secrets.ACCOUNT_0_YNAB_ID }}
 
-      ACCOUNT_1_NAME: ${{ secrets.ACCOUNT_1_NAME }}
+      ACCOUNT_1_NAME: "Nubank Credit Card"
       ACCOUNT_1_PLUGGY_ID: ${{ secrets.ACCOUNT_1_PLUGGY_ID }}
       ACCOUNT_1_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_1_YNAB_BUDGET_ID }}
       ACCOUNT_1_YNAB_ID: ${{ secrets.ACCOUNT_1_YNAB_ID }}
