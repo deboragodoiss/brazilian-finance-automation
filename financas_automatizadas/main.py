@@ -75,13 +75,14 @@ def main() -> [dict]:
     bank_accounts = get_bank_accounts_from_env()
 
     created_transactions = []
+    print("Syncing...")
     for account in bank_accounts:
         name = account[NAME_ENVVAR_SUFFIX]
         pluggy_id = account[PLUGGY_ID_ENVVAR_SUFFIX]
         ynab_budget_id = account[YNAB_BUDGET_ID_ENVVAR_SUFFIX]
         ynab_id = account[YNAB_ID_ENVVAR_SUFFIX]
 
-        print(f'============ SYNCING {name} ===============')
+        print(f'✅ {name}')
 
         transactions: [Transaction] = get_transactions(
             account_id=pluggy_id,
@@ -96,7 +97,7 @@ def main() -> [dict]:
 
         created_transactions += transactions_to_ynab
 
-    print(f"✅ {len(created_transactions)} transactions synced")
+    print(f"🎉 {len(created_transactions)} transactions synced")
     return created_transactions
 
 if __name__ == "__main__":
