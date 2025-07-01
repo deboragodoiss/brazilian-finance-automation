@@ -7,10 +7,21 @@ on:
         - trunk
 jobs:
   sync:
-    env:
+    env: # Mimics the .env file in the root of the repository
       YNAB_TOKEN: ${{ secrets.YNAB_TOKEN }}
       PLUGGY_CLIENT_ID: ${{ secrets.PLUGGY_CLIENT_ID }}
       PLUGGY_CLIENT_SECRET: ${{ secrets.PLUGGY_CLIENT_SECRET }}
+
+      ACCOUNT_0_NAME: ${{ secrets.ACCOUNT_0_NAME }}
+      ACCOUNT_0_PLUGGY_ID: ${{ secrets.ACCOUNT_0_PLUGGY_ID }}
+      ACCOUNT_0_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_0_YNAB_BUDGET_ID }}
+      ACCOUNT_0_YNAB_ID: ${{ secrets.ACCOUNT_0_YNAB_ID }}
+
+      ACCOUNT_1_NAME: ${{ secrets.ACCOUNT_1_NAME }}
+      ACCOUNT_1_PLUGGY_ID: ${{ secrets.ACCOUNT_1_PLUGGY_ID }}
+      ACCOUNT_1_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_1_YNAB_BUDGET_ID }}
+      ACCOUNT_1_YNAB_ID: ${{ secrets.ACCOUNT_1_YNAB_ID }}
+
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -23,12 +34,11 @@ jobs:
           version: "latest"
           enable-cache: true
       - run: uv --version
-      - name: Install Python 3.12
-        run: uv python install 3.12
+      - name: Install Python
+        run: uv python install  # Installs the version in the .python-version file in the root of the repo
       - run: uv run python --version
       - name: Verify cache
         if: steps.setup-uv.outputs.cache-hit == 'true'
         run: echo "Cache was restored"
-      - name: Run sync to ynab
-        run: |
-          uv run python financas_automatizadas/main.py
+      - name: Run sync to YNAB
+        run: make run
