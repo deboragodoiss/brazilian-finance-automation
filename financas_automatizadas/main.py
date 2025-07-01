@@ -81,9 +81,7 @@ def main() -> [dict]:
         ynab_budget_id = account[YNAB_BUDGET_ID_ENVVAR_SUFFIX]
         ynab_id = account[YNAB_ID_ENVVAR_SUFFIX]
 
-        print("######")
-        print(f'SYNCING {name}')
-        print("######")
+        print(f'============ SYNCING {name} ===============')
 
         transactions: [Transaction] = get_transactions(
             account_id=pluggy_id,
@@ -98,9 +96,7 @@ def main() -> [dict]:
             )
         )
 
-    print("######")
-    print(f"SYNCED {len(transactions)} TRANSACTIONS")
-    print("######")
+    print(f"✅ {len(transactions)} transactions synced")
     return transactions
 
 if __name__ == "__main__":

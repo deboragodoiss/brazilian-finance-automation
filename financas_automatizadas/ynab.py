@@ -33,7 +33,7 @@ def send_transactions_to_ynab(transactions: [Transaction], budget_id, account_id
                 "category_id": None,
                 "memo": transaction.description,
                 "cleared": "cleared",
-                "approved": True, # Can we get rid of this?
+                "approved": False,
                 "import_id": transaction.external_id,
             }
         }
