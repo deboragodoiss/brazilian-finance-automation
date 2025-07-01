@@ -27,6 +27,7 @@ Use
    ```
 
 ### Running Every Day
+[Like this](https://github.com/mieubrisse/brazilian-finance-automation/actions/workflows/sync-to-ynab.yml)
 1. Fork this repo
 1. Modify the `.github/workflows/sync-to-ynab.yml` file to pass in the appropriate environment variables based on the contents of your `.env` file
 1. Update the repository's secrets to provide the values for the environment variables
