@@ -2,6 +2,8 @@ Brazil Finance Automation
 =========================
 Manda transações de bancos brasileiros (Nubank, Itaú, etc.) para o YNAB.
 
+Estou muito grato a [Felipe de Morais](https://github.com/lipemorais), quem criou [o base](https://github.com/lipemorais/financas-automatizadas/) por este repo.
+
 Prerequisites
 -------------
 You must go through [all the steps here](https://github.com/pluggyai/meu-pluggy?tab=readme-ov-file#connecting-your-bank-account-to-meupluggy) to create a MyPluggy account, a developer portal account, and link them together!
