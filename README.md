@@ -8,23 +8,30 @@ You must go through [all the steps here](https://github.com/pluggyai/meu-pluggy?
 
 Use
 ---
-### Running Locally
-1. Fork this repo
-1. Clone your fork to your machine
-1. [Install the `uv` Python package manager](https://docs.astral.sh/uv/getting-started/installation/#pypi)
-1. Setup the repo:
-   ```
-   make setup
-   ```
-   and fill in the created `.env` file, using the comments as guidance on where to get the values.
-1. Sync transactions with:
-   ```
-   make run
-   ```
-1. Run tests with:
-   ```
-   make test
-   ```
+### Running locally
+This repo is [set up with VSCode's devcontainers](https://code.visualstudio.com/docs/devcontainers/containers).
+
+The easiest way to get going with it is to:
+
+1. Install [Docker](https://www.docker.com/)
+1. Install [VSCode](https://code.visualstudio.com/)
+1. Install the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+1. Open the repo in VSCode
+1. Select "Reopen in container" when the popup appears, "Folder contains a Dev Container configuration file. Reopen folder to develop in a container"
+
+The first time you start the dev container, the `.env.example` will be copied to a `.env`. You'll get prompted with an "❗ACTION" to fill in your credentials in the `.env` file.
+
+From there, you can run the sync using:
+
+```
+make run
+```
+
+Tests can be run with:
+
+```
+make test
+```
 
 ### Running Every Day
 [Like this](https://github.com/mieubrisse/brazilian-finance-automation/actions/workflows/sync-to-ynab.yml)
