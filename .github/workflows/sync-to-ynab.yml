@@ -23,6 +23,11 @@ jobs:
       ACCOUNT_1_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_1_YNAB_BUDGET_ID }}
       ACCOUNT_1_YNAB_ID: ${{ secrets.ACCOUNT_1_YNAB_ID }}
 
+      ACCOUNT_2_NAME: "Itau Checking"
+      ACCOUNT_2_PLUGGY_ID: ${{ secrets.ACCOUNT_2_PLUGGY_ID }}
+      ACCOUNT_2_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_2_YNAB_BUDGET_ID }}
+      ACCOUNT_2_YNAB_ID: ${{ secrets.ACCOUNT_2_YNAB_ID }}
+
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
