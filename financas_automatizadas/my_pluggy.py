@@ -3,6 +3,7 @@ from unittest.mock import ANY
 
 import requests
 from decouple import config
+import json
 
 
 from schemas import Transaction
@@ -49,11 +50,20 @@ def normalize_transactions(pluggy_transactions) -> [Transaction]:
     normalized_transactions = []
 
     for transaction in pluggy_transactions:
+        print(json.dumps(transaction))
+
         description = transaction["description"].strip()
+        print("Transaction description: " + description)
         description_parts = description.split("|")
         payee=None
         if len(description_parts) >= 2:
+            # The majority of transaction descriptions are like this:
+            # Transferência enviada|JUAN CARLOS
             payee=description_parts[1]
+        else:
+            # Other times (maybe with autopay?) we get descriptions like this:
+            # VIVO (MÓVEL + COMBOS)
+            payee=description
 
         new_transaction = Transaction(
             external_id=transaction["id"],
