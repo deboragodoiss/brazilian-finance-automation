@@ -16,6 +16,9 @@ def get_amount(transaction: Transaction) -> int:
 
 
 def send_transactions_to_ynab(transactions: [Transaction], budget_id, account_id) -> [dict]:
+    # TODO DEBUGGING
+    return {}
+
     base_url = "https://api.youneedabudget.com/v1"
     url = f"{base_url}/budgets/{budget_id}/transactions"
     created_transactions = []

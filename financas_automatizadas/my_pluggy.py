@@ -88,12 +88,16 @@ def get_transactions(account_id: str, api_key: str) -> list[ANY]:
     today = date.today()
     a_week_ago = today - timedelta(days=7)
 
+    print(account_transactions_url)
+    print(a_week_ago.strftime("%Y-%m-%d"))
+    print(today.strftime("%Y-%m-%d"))
+    print(api_key)
     response = requests.get(
         url=f"{account_transactions_url}",
         params={
             "accountId": account_id,
-            "from": a_week_ago.strftime("%Y-%m-%d"),
-            "to": today.strftime("%Y-%m-%d"),
+            # "from": a_week_ago.strftime("%Y-%m-%d"),
+            # "to": today.strftime("%Y-%m-%d"),
             "page": 1,
             "pageSize": 50,
         },
@@ -102,5 +106,6 @@ def get_transactions(account_id: str, api_key: str) -> list[ANY]:
             "X-API-KEY": api_key,
         },
     )
+    print(response.json())
     transactions = normalize_transactions(response.json()["results"])
     return transactions
