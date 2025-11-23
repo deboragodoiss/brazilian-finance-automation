@@ -18,10 +18,10 @@ jobs:
       ACCOUNT_0_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_0_YNAB_BUDGET_ID }}
       ACCOUNT_0_YNAB_ID: ${{ secrets.ACCOUNT_0_YNAB_ID }}
 
-      # ACCOUNT_1_NAME: ${{ secrets.ACCOUNT_1_NAME }}
-      # ACCOUNT_1_PLUGGY_ID: ${{ secrets.ACCOUNT_1_PLUGGY_ID }}
-      # ACCOUNT_1_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_1_YNAB_BUDGET_ID }}
-      # ACCOUNT_1_YNAB_ID: ${{ secrets.ACCOUNT_1_YNAB_ID }}
+      ACCOUNT_1_NAME: ${{ secrets.ACCOUNT_1_NAME }}
+      ACCOUNT_1_PLUGGY_ID: ${{ secrets.ACCOUNT_1_PLUGGY_ID }}
+      ACCOUNT_1_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_1_YNAB_BUDGET_ID }}
+      ACCOUNT_1_YNAB_ID: ${{ secrets.ACCOUNT_1_YNAB_ID }}
 
       # ACCOUNT_2_NAME: ${{ secrets.ACCOUNT_2_NAME }}
       # ACCOUNT_2_PLUGGY_ID: ${{ secrets.ACCOUNT_2_PLUGGY_ID }}
