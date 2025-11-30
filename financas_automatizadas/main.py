@@ -76,6 +76,7 @@ def main() -> [dict]:
 
     created_transactions = []
     print("Syncing...")
+    print("")
     for account in bank_accounts:
         name = account[NAME_ENVVAR_SUFFIX]
         pluggy_id = account[PLUGGY_ID_ENVVAR_SUFFIX]
@@ -96,6 +97,7 @@ def main() -> [dict]:
         )
 
         print(f"✅ {len(transactions_to_ynab)} transactions synced")
+        print("")
 
         created_transactions += transactions_to_ynab
 
