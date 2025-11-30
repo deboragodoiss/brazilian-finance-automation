@@ -13,17 +13,17 @@ jobs:
       PLUGGY_CLIENT_ID: ${{ secrets.PLUGGY_CLIENT_ID }}
       PLUGGY_CLIENT_SECRET: ${{ secrets.PLUGGY_CLIENT_SECRET }}
 
-      ACCOUNT_0_NAME: ${{ secrets.ACCOUNT_0_NAME }}
+      ACCOUNT_0_NAME: ${{ vars.ACCOUNT_0_NAME }}
       ACCOUNT_0_PLUGGY_ID: ${{ secrets.ACCOUNT_0_PLUGGY_ID }}
       ACCOUNT_0_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_0_YNAB_BUDGET_ID }}
       ACCOUNT_0_YNAB_ID: ${{ secrets.ACCOUNT_0_YNAB_ID }}
 
-      ACCOUNT_1_NAME: ${{ secrets.ACCOUNT_1_NAME }}
+      ACCOUNT_1_NAME: ${{ vars.ACCOUNT_1_NAME }}
       ACCOUNT_1_PLUGGY_ID: ${{ secrets.ACCOUNT_1_PLUGGY_ID }}
       ACCOUNT_1_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_1_YNAB_BUDGET_ID }}
       ACCOUNT_1_YNAB_ID: ${{ secrets.ACCOUNT_1_YNAB_ID }}
 
-      ACCOUNT_2_NAME: ${{ secrets.ACCOUNT_2_NAME }}
+      ACCOUNT_2_NAME: ${{ vars.ACCOUNT_2_NAME }}
       ACCOUNT_2_PLUGGY_ID: ${{ secrets.ACCOUNT_2_PLUGGY_ID }}
       ACCOUNT_2_YNAB_BUDGET_ID: ${{ secrets.ACCOUNT_2_YNAB_BUDGET_ID }}
       ACCOUNT_2_YNAB_ID: ${{ secrets.ACCOUNT_2_YNAB_ID }}
