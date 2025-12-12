@@ -50,10 +50,8 @@ def normalize_transactions(pluggy_transactions) -> [Transaction]:
     normalized_transactions = []
 
     for transaction in pluggy_transactions:
-        print(json.dumps(transaction))
 
         description = transaction["description"].strip()
-        print("Transaction description: " + description)
         description_parts = description.split("|")
         payee=None
         if len(description_parts) >= 2:

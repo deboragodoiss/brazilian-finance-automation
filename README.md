@@ -8,6 +8,10 @@ Prerequisites
 -------------
 You must go through [all the steps here](https://github.com/pluggyai/meu-pluggy?tab=readme-ov-file#connecting-your-bank-account-to-meupluggy) to create a MyPluggy account, a developer portal account, and link them together!
 
+⚠️ **IMPORTANT:** If you're hooking up multiple banks, you need to create multiple items in the Pluggy Dashboard for your Application, like this:
+
+![](./multiple-pluggy-dashboard-items.png)
+
 Use
 ---
 ### Running locally
