@@ -84,7 +84,10 @@ def normalize_transactions(pluggy_transactions) -> [Transaction]:
 def get_transactions(account_id: str, api_key: str) -> list[ANY]:
     account_transactions_url = f"{PLUGGY_URL}transactions"
     today = date.today()
-    a_week_ago = today - timedelta(days=7)
+
+    # TODO Switch this back after Dec 26
+    # a_week_ago = today - timedelta(days=7)
+    a_week_ago = datetime.datetime(2025, 12, 18).date()
 
     response = requests.get(
         url=f"{account_transactions_url}",
