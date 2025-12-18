@@ -87,7 +87,7 @@ def get_transactions(account_id: str, api_key: str) -> list[ANY]:
 
     # TODO Switch this back after Dec 26
     # a_week_ago = today - timedelta(days=7)
-    a_week_ago = datetime.datetime(2025, 12, 18).date()
+    a_week_ago = datetime(2025, 12, 18).date()
 
     response = requests.get(
         url=f"{account_transactions_url}",
